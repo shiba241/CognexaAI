@@ -56,8 +56,8 @@ with st.sidebar:
     st.markdown("### 🔗 Links")
     # st.markdown("[GitHub Repo](#) · [LangSmith Traces](#)")
     st.markdown(
-    "[👉 GitHub Repo](https://github.com/vishal815/ResearchForge-Autonomous-Multi-Agent-Research-System) · "
-    "[🤝 LinkedIn](https://www.linkedin.com/in/vishal-lazrus/)")
+    "[👉 GitHub Repo](https://github.com/shiba241/CognexaAI.git) · "
+    "[🤝 LinkedIn](https://www.linkedin.com/in/shiba-prasad-sahu-8b04142b4/)")
 
 # ── Header ────────────────────────────────────────────────────────────────────
 render_header()

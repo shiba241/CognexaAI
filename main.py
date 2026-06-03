@@ -15,10 +15,10 @@ from graph.graph_builder import build_graph
 
 
 def run_research(query: str):
-    """Run the full ResearchForge pipeline for a given query."""
+    """Run the full CognexaAI pipeline for a given query."""
 
     print("\n" + "=" * 60)
-    print(f"  ResearchForge")
+    print(f" CognexaAI")
     print(f"  Query: {query}")
     print("=" * 60)
 
