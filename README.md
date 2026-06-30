@@ -1,6 +1,6 @@
 # 🔬 CognexaAI
 
-<img width="1536" height="1024" alt="ChatGPT Image May 31, 2026, 03_12_43 AM" src="https://chatgpt.com/s/m_6a43f90ce8d881918b768da94f9352c0" />
+<img width="1536" height="1024" alt="ChatGPT Image May 31, 2026, 03_12_43 AM" src="/image/ChatGPT Image Jun 30, 2026, 10_50_09 PM.png" />
 
 ### Autonomous Multi-Agent Research System · Powered by LangGraph + Gemini + Tavily
 
