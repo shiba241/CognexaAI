@@ -32,7 +32,7 @@ with st.sidebar:
     st.markdown("""
     **Cognexa AI** is a multi-agent AI system built with:
     - 🔗 **LangGraph** — agent orchestration
-    - 🤖 **Gemini 1.5 Flash** — LLM reasoning
+    - 🤖 **Gemini 2.5 Flash** — LLM reasoning
     - 🌐 **Tavily** — web search
     - 📊 **LangSmith** — tracing
     """)

@@ -1,15 +1,15 @@
-# 🔬 ResearchForge
+# 🔬 CognexaAI
 
-<img width="1536" height="1024" alt="ChatGPT Image May 31, 2026, 03_12_43 AM" src="https://github.com/user-attachments/assets/a5fe5c25-b012-4015-beb3-7c4914cc4d5b" />
+<img width="1536" height="1024" alt="ChatGPT Image May 31, 2026, 03_12_43 AM" src="https://chatgpt.com/s/m_6a43f90ce8d881918b768da94f9352c0" />
 
 ### Autonomous Multi-Agent Research System · Powered by LangGraph + Gemini + Tavily
 
 > **Give it a topic. Get a full research report.**
-> ResearchForge uses a team of AI agents that plan, search, analyse, find examples, write, and self-check — all automatically.
+> CognexaAI uses a team of AI agents that plan, search, analyse, find examples, write, and self-check — all automatically.
 
 ### 🔗 Open Live Application
 
-**👉 https://huggingface.co/spaces/Visal9252/Autonomous_Multi-Agent_Research_System**
+**👉 https://cognexaa.streamlit.app/**
 
 No installation required. Just enter a research topic and watch the AI agents work.
 
@@ -25,7 +25,7 @@ No installation required. Just enter a research topic and watch the AI agents wo
 
 ## 📌 Table of Contents
 
-1. [What is ResearchForge?](#-what-is-researchforge)
+1. [What is CognexaAI?](#-what-is-CognexaAI)
 2. [How It Works — Real Example](#-how-it-works--real-example)
 3. [Core Concepts Explained](#-core-concepts-explained)
 4. [Architecture](#-architecture)
@@ -41,9 +41,9 @@ No installation required. Just enter a research topic and watch the AI agents wo
 
 ---
 
-## 🤔 What is ResearchForge?
+## 🤔 What is CognexaAI?
 
-ResearchForge is a **multi-agent AI research system** that takes one research question from you and automatically:
+CognexaAI is a **multi-agent AI research system** that takes one research question from you and automatically:
 
 1. **Plans** the research by breaking your query into subtasks
 2. **Searches** the web for real, current information
@@ -130,7 +130,7 @@ LangGraph is a Python library for building **stateful, multi-step AI workflows**
 Think of it like a flowchart where each box is an AI agent and the arrows are the flow of information.
 
 ### What is a Virtual File System?
-Instead of saving files to your actual hard drive, ResearchForge uses a Python dictionary inside LangGraph's state to simulate a file system. Each agent "writes a file" (saves to the dict) and other agents can "read" it later.
+Instead of saving files to your actual hard drive, CognexaAI uses a Python dictionary inside LangGraph's state to simulate a file system. Each agent "writes a file" (saves to the dict) and other agents can "read" it later.
 
 ```python
 # Writing a file (inside state dict)
@@ -211,7 +211,7 @@ After the synthesizer writes a report, the quality gate node asks Gemini: *"Scor
 ## 📁 Folder Structure
 
 ```
-researchforge/
+CognexaAI/
 │
 ├── graph/                         ← LangGraph agent nodes
 │   ├── __init__.py
@@ -282,7 +282,7 @@ Gemini is the default LLM that powers all reasoning in the project.
 
 ### 2. Tavily Search API Key ✅ Recommended · Free
 
-Tavily provides real-time web search capabilities for ResearchForge.
+Tavily provides real-time web search capabilities for CognexaAI.
 
 **Steps:**
 
@@ -404,7 +404,7 @@ Add to `.env`:
 ```env
 LANGCHAIN_API_KEY=your_key_here
 LANGCHAIN_TRACING_V2=true
-LANGCHAIN_PROJECT=researchforge
+LANGCHAIN_PROJECT=CognexaAI
 ```
 
 ---
@@ -456,13 +456,13 @@ llm = HuggingFaceHub(
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/vishal815/ResearchForge-Autonomous-Multi-Agent-Research-System.git
-cd researchforge
+git clone https://github.com/vishal815/CognexaAI-Autonomous-Multi-Agent-Research-System.git
+cd CognexaAI
 ```
 
 Or download the ZIP and extract it, then:
 ```bash
-cd researchforge
+cd CognexaAI
 ```
 
 ---
@@ -502,7 +502,7 @@ This creates a `.venv` folder — an isolated Python environment just for this p
 source .venv/bin/activate
 ```
 
-You will see `(researchforge)` appear at the start of your terminal line. This means the environment is active.
+You will see `(CognexaAI)` appear at the start of your terminal line. This means the environment is active.
 
 > ⚠️ You must activate the environment every time you open a new terminal.
 
@@ -544,7 +544,7 @@ TAVILY_API_KEY=your_tavily_key_here
 # Optional — for LangSmith tracing
 LANGCHAIN_API_KEY=your_langsmith_key_here
 LANGCHAIN_TRACING_V2=true
-LANGCHAIN_PROJECT=researchforge
+LANGCHAIN_PROJECT=CognexaAI
 ```
 
 > 🔒 The `.env` file is already in `.gitignore` — it will never be pushed to GitHub.
@@ -566,7 +566,7 @@ You will see each agent printing its status in the terminal. At the end, a repor
 **Expected output:**
 ```
 ============================================================
-  ResearchForge
+  CognexaAI
   Query: Research the impact of artificial intelligence on healthcare
 ============================================================
 
@@ -615,7 +615,7 @@ Your browser opens automatically at `http://localhost:8501`
 
 ## 📄 Download Report as PDF
 
-ResearchForge generates reports in Markdown format.
+CognexaAI generates reports in Markdown format.
 
 The PDF download button appears automatically in the UI after a report is generated. The PDF includes:
 - Project title and date
@@ -626,7 +626,7 @@ The PDF download button appears automatically in the UI after a report is genera
 
 ## 🎬 Output Demo Video of Project
 
-![ResearchForge Demo](
+![CognexaAI Demo](
 
 https://github.com/user-attachments/assets/f34f0e95-37ac-49f8-8243-ed7055c4b31d
 
@@ -698,7 +698,7 @@ Your `TAVILY_API_KEY` is missing or wrong. The project will still work — agent
 ### Streamlit UI does not open
 Make sure you run from the project root folder:
 ```bash
-# Must be in researchforge/ folder
+# Must be in CognexaAI/ folder
 streamlit run ui/app.py
 ```
 

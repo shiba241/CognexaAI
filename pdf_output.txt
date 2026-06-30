@@ -1,0 +1,193 @@
+
+=== SLIDE 1 ===
+Autonomous Cognitive Engine 
+(CognexaAI) 
+Present by : Shiba Prasad Sahu
+Program : PMIS Internship Program – Infosys Limited 
+
+=== SLIDE 2 ===
+The Core Challenge
+• They Forget Mid-Task
+• LLMs have a fixed context window — during long research, they lose early 
+instructions and start hallucinating facts
+• No Planning or Delegation Ability
+• A single LLM can't break a complex problem into subtasks or assign 
+specialized roles — it works like one person doing everything alone
+• No Self-Correction
+• Standard LLMs deliver output in one shot — no review, no quality check, no 
+retry if the result is poor
+
+=== SLIDE 3 ===
+The ACE Solution
+• Works Like a Manager, Not a Chatbot
+• ACE acts as a central coordinator — it reads your goal, creates a strict step-by-
+step plan, and controls the entire execution flow
+• Never Forgets — Uses a Virtual File System
+• Every agent saves its work into a shared memory (VFS), so no information is 
+lost between steps — the system always knows what happened before
+• Delegates Tasks to Specialist Agents
+• Instead of one AI doing everything, ACE assigns each task to a focused agent 
+— search, analysis, examples — each expert in its own job
+
+=== SLIDE 4 ===
+Technology Stack
+Python 3.11+ with 
+LangGraph & LangChain
+Advanced LLMs Powering 
+Decision-Making
+LangSmith for Real-Time 
+Monitoring
+• Python handles the core logic, LangGraph 
+manages the multi-step agent workflow with 
+shared state, and LangChain connects 
+everything to LLM APIs seamlessly
+• LLMs (like Claude/Gemini) act as the thinking 
+engine behind every agent — they plan, 
+reason, and take action using the ReAct
+(Reason → Act → Observe) pattern
+• Works like an X-ray for AI — tracks every 
+step, every agent call, and every decision in 
+real time, making it easy to debug and 
+evaluate performance
+
+=== SLIDE 5 ===
+Architectural Shift 
+Why LangGraph?
+Goes Beyond Simple 
+Chains — Supports Loops 
+& Retries
+• Unlike basic LangChain 
+pipelines that run in a 
+straight line, LangGraph 
+allows the AI to go back, 
+retry failed steps, and 
+repeat until the output is 
+good enough
+Every Step is a Separate 
+Node in a Graph
+• Each action — planning, 
+searching, analyzing, 
+writing — is a separate 
+building block (node), 
+connected by edges, 
+making the workflow 
+modular and easy to 
+control
+Keeps Memory Alive 
+Across All Steps
+• LangGraph maintains a 
+shared state throughout 
+the entire process — no 
+step loses track of what 
+previous steps did, and it 
+even supports pausing 
+for human review before 
+continuing
+
+=== SLIDE 6 ===
+System Architecture 
+Diagram
+The entire system runs on a LangGraph
+StateGraph — a shared brain that
+keeps all agents in sync. When a user
+enters a research topic, the Planner
+breaks it into tasks, three specialist
+Workers (Search, Analysis, Examples)
+execute them and save outputs to a
+Virtual File System, the Synthesizer
+merges everything into a full report,
+and the Quality Gate scores it —
+retrying automatically if the quality
+isn't good enough.
+
+=== SLIDE 7 ===
+The Core Engine
+• Think Before Acting
+• The agent doesn't blindly execute — it first reasons about the current 
+situation and decides what the best next step should be
+• Act by Calling the Right Tool
+• Based on its reasoning, it picks the most suitable action — like searching the 
+web, analyzing data, or writing a report section
+• Observe the Result Before Moving On
+• After every action, it checks the outcome — if a search failed or returned 
+poor results, it recognizes the issue and tries a different approach instead of 
+making up an answer
+
+=== SLIDE 8 ===
+Intelligent Task Planning
+Plans First, Executes 
+Second
+• Before doing any work, 
+ACE analyzes the 
+research goal and breaks 
+it down into smaller, 
+clear sub-tasks — just 
+like a manager creating a 
+to-do list before 
+assigning work
+Custom write_todos
+Tool Forces Structured 
+Planning
+• The AI is required to use 
+the write_todos tool — it 
+can't skip planning. This 
+ensures every research task 
+gets a proper, ordered 
+action plan before execution 
+begins
+Every Task is Tracked to 
+Completion
+• All sub-tasks are saved into 
+the LangGraph state and 
+tracked one by one —
+nothing gets missed, and 
+the system always knows 
+what's done and what's 
+pending
+
+=== SLIDE 9 ===
+Context Offloading 
+The Virtual File System(VFS)
+The Virtual File System (VFS) acts as the 
+AI's personal notebook — agents can save 
+their findings using tools like write_file and 
+read_file, free up their active memory, and 
+pull back only what's needed later. This 
+breaks through LLM context limits, handles 
+large-scale data without crashing, and 
+significantly reduces API token costs.
+
+=== SLIDE 10 ===
+Modular Intelligence / Sub-Agent Delegation
+"The main supervisor doesn't do all the heavy lifting itself — it acts as a manager and 
+assigns specific tasks to specialized sub-agents like Search, Analysis, and Examples. 
+Each agent works in its own isolated space with only the tools it needs, so they stay 
+focused, don't interfere with each other, and the main engine never gets overloaded."
+
+=== SLIDE 11 ===
+Quality Assurance 
+• Task Planning — 80%+ Accuracy
+• The Planner successfully broke down complex research goals into clear, 
+actionable sub-tasks in over 80% of test cases
+• VFS Usage — 80%+ Autonomous Adoption
+• Agents correctly saved and retrieved data using the Virtual File System in 
+more than 80% of multi-step scenarios, verified through LangSmith traces
+• Output Quality — LLM-as-a-Judge Scoring
+• Every final report is scored by the AI itself on a 0–10 scale. If it scores below 7, 
+the system automatically retries until the quality meets the standard
+
+=== SLIDE 12 ===
+Technical Challenges & Key Learnings
+• Controlling Unpredictable AI Behavior
+• LLMs can loop endlessly or call tools incorrectly — we solved this by designing 
+strict system prompts and enforcing Pydantic schemas to keep agents 
+disciplined and on track
+• Managing Shared Memory Without Data Loss
+• Multiple agents writing to the same state can overwrite each other's work —
+we learned to carefully synchronize state updates so every agent's output 
+stays safe and intact
+
+=== SLIDE 13 ===
+Live Demonstration
+Link:-  https://cognexaa.streamlit.app/
+Thank You
